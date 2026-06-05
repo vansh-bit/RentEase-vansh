@@ -1,17 +1,12 @@
-const Cryptr = require("cryptr");
-const cryptr = new Cryptr(process.env.SECRET_KEY);
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr(process.env.ENCRYPTION_KEY);
 
 function encryptData(data) {
-  const encryptedString = cryptr.encrypt(data);
-  return encryptedString;
+  return cryptr.encrypt(JSON.stringify(data));
 }
 
 function decryptData(data) {
-  const decryptedString = cryptr.decrypt(data);
-  return decryptedString;
+  return JSON.parse(cryptr.decrypt(data));
 }
 
-module.exports = {
-  encryptData,
-  decryptData,
-};
+module.exports = { encryptData, decryptData };

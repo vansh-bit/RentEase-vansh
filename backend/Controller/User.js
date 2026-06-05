@@ -77,7 +77,7 @@ const updateLandlordSignature = async (req, res) => {
     try {
       const agreement = await Agreement.findByIdAndUpdate(
         req.params.id,
-        { landlordSignature: true, updatedAt: Date.now() },
+        { landlordSignature: true },
         { new: true }
       );
       
@@ -112,7 +112,7 @@ const updateTenantSignature = async (req, res) => {
     try {
       const agreement = await Agreement.findByIdAndUpdate(
         req.params.id,
-        { tenantSignature: true, updatedAt: Date.now() },
+        { tenantSignature: true },
         { new: true }
       );
       

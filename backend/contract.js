@@ -40,7 +40,7 @@ const setLender = async (lender,agreementId)=>{
 }
 const setTenant = async (tenet,agreementId)=>{
     try {
-        const response = await contract.setTenant(tenant,agreementId);
+        const response = await contract.setTenant(tenet,agreementId);
         console.log(response);
         return response
         } catch (error) {
