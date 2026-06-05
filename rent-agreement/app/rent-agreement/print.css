@@ -1,0 +1,36 @@
+@media print {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .grid {
+    display: block;
+  }
+
+  .card {
+    box-shadow: none;
+    border: none;
+  }
+
+  button,
+  .tabs,
+  .form-section {
+    display: none !important;
+  }
+
+  .prose {
+    max-width: 100%;
+    font-size: 12pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-bottom: 20pt;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
+

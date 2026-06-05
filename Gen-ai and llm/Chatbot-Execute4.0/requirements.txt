@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-core
+langchain-community==0.3.19
+transformers
+torch
+huggingface_hub
+langchain_huggingface
+
