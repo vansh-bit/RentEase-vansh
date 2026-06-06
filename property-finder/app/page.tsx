@@ -47,6 +47,9 @@ export default function Home() {
             <Link href="/commercial" className="text-sm font-medium hover:text-primary">
               Commercial
             </Link>
+            <Link href="http://localhost:3001/rent-agreement" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+              Rent Agreement <span className="text-[10px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">NEW</span>
+            </Link>
           </nav>
           <div className="flex items-center gap-4">
             <Link href="/saved" className="text-sm font-medium hover:text-primary hidden md:block">
@@ -91,6 +94,40 @@ export default function Home() {
               </Link>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Blockchain Rent Agreement Promo Banner */}
+      <section className="py-8 bg-indigo-50 border-y border-indigo-100">
+        <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-indigo-600 text-white rounded-lg hidden sm:block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                <polyline points="14 2 14 8 20 8" />
+                <path d="m10 13 2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg text-indigo-950">Create Legally Binding Rent Agreements Instantly</h3>
+              <p className="text-sm text-indigo-700">Digitally signed, e-stamped, and verified securely via Blockchain technology.</p>
+            </div>
+          </div>
+          <Link href="http://localhost:3001/rent-agreement">
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200">
+              Generate Rent Agreement
+            </Button>
+          </Link>
         </div>
       </section>
 
