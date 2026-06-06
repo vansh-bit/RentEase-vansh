@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Heart, MapPin, Bed, Bath, Maximize2 } from "lucide-react"
+import { RENT_AGREEMENT_URL } from "@/lib/config"
 
 export default function RentPage() {
   const rentProperties = [
@@ -81,7 +82,7 @@ export default function RentPage() {
             <Link href="/commercial" className="text-sm font-medium hover:text-primary">
               Commercial
             </Link>
-            <Link href="http://localhost:3001/rent-agreement" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+            <Link href={RENT_AGREEMENT_URL} className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
               Rent Agreement <span className="text-[10px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">NEW</span>
             </Link>
           </nav>
@@ -111,7 +112,7 @@ export default function RentPage() {
             <h1 className="text-3xl font-bold">Properties for Rent</h1>
             <p className="text-muted-foreground mt-2">Explore modern and cozy rental apartments.</p>
           </div>
-          <Link href="http://localhost:3001/rent-agreement">
+          <Link href={RENT_AGREEMENT_URL}>
             <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-sm">
               Need a Rent Agreement? Create Now
             </Button>

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Check } from "lucide-react"
+import { RENT_AGREEMENT_URL } from "@/lib/config"
 
 export default function PackagesPage() {
   const packages = [
@@ -86,7 +87,7 @@ export default function PackagesPage() {
             <Link href="/commercial" className="text-sm font-medium hover:text-primary">
               Commercial
             </Link>
-            <Link href="http://localhost:3001/rent-agreement" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+            <Link href={RENT_AGREEMENT_URL} className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
               Rent Agreement <span className="text-[10px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">NEW</span>
             </Link>
           </nav>
