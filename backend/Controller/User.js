@@ -1,14 +1,11 @@
 const {Agreement} = require("../Schema/AgreementSchema");
 const { encryptData } = require("../Utils/util");
-const Contract = require('../contract')
 async function makeAgreement(req, res) {
     try {
-      const { _id,tenantName,landlordAadhaar,tenantAadhaar,agreementData } =
-        req.body;
+      const { _id,agreementData } = req.body;
       const encryptedAgreementData = encryptData(agreementData);
-      const response = await Contract.makeAgreement(_id,landlordAadhaar,tenantAadhaar,encryptedAgreementData);
-
-      console.log(response);
+      // Saved and finalized purely in database
+      await Agreement.findByIdAndUpdate(_id, { agreementData: encryptedAgreementData });
       res
         .status(200)
         .json({ status:true });
@@ -20,8 +17,7 @@ async function makeAgreement(req, res) {
 async function getAgreement(req, res) {
     try{
         const { _id } = req.params;
-        const response = await Contract.getAgreement(_id);
-        console.log(response);
+        const response = await Agreement.findById(_id);
         res
         .status(200)
         .json({ status:true, data: response });
@@ -32,9 +28,8 @@ async function getAgreement(req, res) {
 }
 async function setLender(req, res) {
     try {
-        const { _id, landlordAadhaar } = req.body;
-        const response = await Contract.setLender(landlordAadhaar,_id);
-        console.log(response);
+        const { _id } = req.body;
+        await Agreement.findByIdAndUpdate(_id, { landlordSignature: true });
         res.status(200).json({ status:true });
     } catch (error) {
         console.log(error);
@@ -44,9 +39,8 @@ async function setLender(req, res) {
 }
 async function setTenant(req, res) {
     try {
-        const { _id, tenantAadhaar } = req.body;
-        const response = await Contract.setTenant(tenantAadhaar,_id);
-        console.log(response);
+        const { _id } = req.body;
+        await Agreement.findByIdAndUpdate(_id, { tenantSignature: true });
         res.status(200).json({ status:true });
     } catch (error) {
         console.log(error);
@@ -88,10 +82,6 @@ const updateLandlordSignature = async (req, res) => {
         });
       }
       
-      // Set lender (landlord) on blockchain
-      const response = await Contract.setLender(agreement.landlordAadhaar, agreement._id.toString());
-      console.log(response);
-      
       return res.status(200).json({
         success: true,
         message: 'Landlord signature updated successfully',
@@ -122,10 +112,6 @@ const updateTenantSignature = async (req, res) => {
           message: 'Agreement not found'
         });
       }
-      
-      // Set tenant on blockchain
-      const response = await Contract.setTenant(agreement.tenantAadhaar, agreement._id.toString());
-      console.log(response);
       
       return res.status(200).json({
         success: true,

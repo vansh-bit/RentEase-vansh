@@ -121,7 +121,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-bold text-lg text-indigo-950">Create Legally Binding Rent Agreements Instantly</h3>
-              <p className="text-sm text-indigo-700">Digitally signed, e-stamped, and verified securely via Blockchain technology.</p>
+              <p className="text-sm text-indigo-700">Digitally signed, e-stamped, and verified securely via our cloud database.</p>
             </div>
           </div>
           <Link href={RENT_AGREEMENT_URL}>

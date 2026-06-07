@@ -40,7 +40,7 @@ export default function PackagesPage() {
         "Top-of-search Placement",
         "Dedicated Relationship Manager",
         "Free E-Stamp & Digital Signatures",
-        "Full Blockchain verification ledger",
+        "Full digital verification logs",
         "Legal dispute support consultation",
       ],
       isPopular: false,

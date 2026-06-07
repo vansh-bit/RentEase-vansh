@@ -30,8 +30,8 @@ A technology-driven platform that simplifies rental agreements by making them **
 - **Smart Rent Payments & Secure Escrow System:**  
   Safeguard transactions through escrow accounts to prevent payment fraud.  
 
-- **Blockchain-Based Tenant & Landlord Verification:**  
-  Ensure transparent and secure identity verification using blockchain.  
+- **Secure Tenant & Landlord Digital Verification:**  
+  Ensure transparent and secure digital signature tracking for agreements.  
 
 - **AI-Powered Dispute Resolution & Legal Support:**  
   Get automated dispute handling and connect with verified legal experts.  
@@ -48,8 +48,7 @@ A technology-driven platform that simplifies rental agreements by making them **
 - **Node.js** - Server-side logic  
 - **Express** - REST API handling  
 
-### Blockchain  
-- **Ethereum / Hyperledger** - Secure identity verification  
+
 
 ### AI & ML  
 - **TensorFlow** - Rent negotiation and dispute prediction  
@@ -75,8 +74,7 @@ The platform follows a **layered architecture**:
 
 - **Outermost Layer (Presentation):** Frontend (React.js, Tailwind CSS)  
 - **Middle Layer (Application):** APIs and AI models (Node.js, Express, TensorFlow)  
-- **Blockchain Layer (Verification):** Ethereum/Hyperledger for secure tenant/landlord verification  
-- **Data Layer (Storage):** MongoDB and secure escrow accounts  
+- **Data Layer (Storage):** MongoDB and secure databases  
 - **Integration Layer (Services):** Payment gateway (Stripe/Razorpay), digital signatures (DocuSign)  
 
 ---
@@ -131,8 +129,7 @@ The platform follows a **layered architecture**:
 
 ## 🔮 Future Scope  
 
-1. **Enhanced Blockchain Integration:** Implement more robust security and multi-signature agreements.  
-2. **Mobile App Launch:** Develop Android and iOS apps for on-the-go accessibility.  
+1. **Mobile App Launch:** Develop Android and iOS apps for on-the-go accessibility.  
 3. **AI Optimization:** Improve negotiation accuracy and dispute prediction.  
 4. **Strategic Partnerships:** Collaborate with legal and financial institutions to expand services.  
 
